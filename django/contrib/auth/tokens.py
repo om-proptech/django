@@ -17,7 +17,7 @@ class PasswordResetTokenGenerator:
     _secret_fallbacks = None
 
     def __init__(self):
-        self.algorithm = self.algorithm or "sha256"
+        self.algorithm = self.algorithm or settings.DEFAULT_HASHING_ALGORITHM
 
     def _get_secret(self):
         return self._secret or settings.SECRET_KEY
